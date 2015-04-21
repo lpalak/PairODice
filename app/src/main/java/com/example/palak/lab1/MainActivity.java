@@ -1,6 +1,8 @@
 package com.example.palak.lab1;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +33,10 @@ public class MainActivity extends ActionBarActivity {
         rollDice.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                rollDice();
+                //rollDice();
+                Uri number = Uri.parse("tel:6266793113");
+                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+                startActivity(callIntent);
             }
         });
     }
